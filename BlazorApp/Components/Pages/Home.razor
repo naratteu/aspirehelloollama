@@ -5,3 +5,29 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+@using Microsoft.Extensions.AI
+@inject IChatClient chat
+
+<div>
+    <input @bind=prompt @onkeypress=OnKeyPress /> : @result
+</div>
+
+@code {
+    string prompt = "안녕하세요";
+    object result = "";
+
+    private async Task OnKeyPress(KeyboardEventArgs args)
+    {
+        if (args.Key is "Enter")
+            try
+            {
+                result = $"[{prompt}] 에 대한 응답중..";
+                result = await chat.CompleteAsync(prompt);
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+    }
+}
