@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Aspire.OllamaSharp" Version="9.0.1-beta.81" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.31.0-alpha" />
   </ItemGroup>
 
 </Project>

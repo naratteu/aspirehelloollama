@@ -6,8 +6,8 @@
 
 Welcome to your new app.
 
-@using Microsoft.Extensions.AI
-@inject IChatClient chat
+@using Microsoft.SemanticKernel.ChatCompletion
+@inject IChatCompletionService chat
 
 <div>
     <input @bind=Prompt /> : @result
@@ -27,7 +27,7 @@ Welcome to your new app.
             try
             {
                 result = $"[{prompt}] 에 대한 응답 : ";
-                await foreach (var stream in chat.CompleteStreamingAsync(prompt))
+                await foreach (var stream in chat.GetStreamingChatMessageContentsAsync(prompt))
                 {
                     result += stream;
                     StateHasChanged();
