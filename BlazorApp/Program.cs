@@ -1,7 +1,7 @@
 using BlazorApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.AddOllamaSharpChatClient("ollama", opt => opt.SelectedModel = "llama3");
+builder.AddOllamaSharpChatClient("ollama-qwen");
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
