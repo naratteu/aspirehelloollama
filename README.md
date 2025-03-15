@@ -22,3 +22,7 @@ dotnet run
 ## Todo
 
 - 다른 예제 추가
+
+# See Also
+
+- https://youtu.be/SK300wluzd0&t=2317
